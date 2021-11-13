@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #131313;
+  /* display: flex;
+  min-height: 100vh;
+  width: 100vw; */
+  /* overflow: hidden; */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.link a {
+  text-decoration: none;
+  color: rgb(151, 130, 107);
+}
+
+.link:hover {
+  background-color: #ff8177;
+  background-image: linear-gradient(to right, #fa9042 0%, #fa9042 100%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  color: rgb(145, 86, 145);
+  transition: ease-in 200ms;
+  transform: scale(1.3);
+  z-index: 99999;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background-color: #1b1b1b;
+  z-index: 2;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  height: 100%;
+  background-color: #1b1b1b;
+  width: 110px;
+}
+
+.logo {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.logo:hover {
+  transition: ease-in 200ms;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.name {
+  position: relative;
+  color: white;
+  font-size: 3rem;
+  margin-left: 20px;
+}
+
+.version {
+  position: absolute;
+  right: 20px;
+  color: white;
+}
+
+.menu {
+  position: relative;
+  top: 160px;
+  height: 70%;
+  width: 100%;
+  padding-top: 10px;
+  list-style-type: none;
+  overflow-y: auto;
+  box-shadow: inset 0px 20px 8px -10px #272727,
+    inset 0px -20px 8px -10px #272727;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px 40px 40px;
+  box-sizing: border-box;
+  font-size: 3rem;
+}
+
+.projects-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 30px;
+  width: 85%;
+  height: 100%;
+}
+
+.lab-title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  color: white;
+  font-size: 2.5rem;
+  top: 0px;
+}
+
+.accordion {
+  width: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 4px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  background: #1f8dd6;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #54a0ff;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+
+.accordion-header.active {
+  background-color: #1070b1;
+}
+.accordion-header.active i {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-body {
+  padding: 0 1rem;
+  background-color: #f3f3f3;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-body.active {
+  max-height: 10rem;
+  padding: 1rem;
+}
+
+.links a {
+  display: flex;
+  color: white;
+}
+
+.links a:hover {
+  color: purple;
+}
+
+/* -- Mobile -- */
+
+/* Portrait and Landscape */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .container {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .projects-title {
+    display: inline-block;
+    width: 100%;
+    font-size: 2rem;
+    top: 0px;
+  }
+
+  .projects-cards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+
+    width: 100%;
+  }
+
+  .navbar {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    height: 120px;
+    background-color: #1b1b1b;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    padding-top: 10px;
+    list-style-type: none;
+    overflow-x: visible;
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: inline-block;
+  }
+
+  ul {
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  li {
+    float: left;
+  }
+}

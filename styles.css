@@ -74,6 +74,33 @@ a {
   color: white;
 }
 
+.modal-container {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-container.show {
+  display: flex;
+}
+
+.modal {
+  background-color: white;
+  width: 400px;
+  max-width: 100%;
+  height: 500px;
+  padding: 30px 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
 .menu {
   position: relative;
   top: 160px;
@@ -181,10 +208,6 @@ ol {
 .links a {
   display: flex;
   color: white;
-}
-
-.links a:hover {
-  color: purple;
 }
 
 /* -- Mobile -- */

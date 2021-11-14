@@ -11,10 +11,11 @@
     <div class="lab-body">
       <ol type="1">
         <li>Use Burp Suite to intercept and modify the request that sets the product category filter.</li>
-        <li>Modify the category parameter, giving it the value '+UNION+SELECT+NULL--. Observe
+        <li>Modify the category parameter, giving it the value <b>'+UNION+SELECT+NULL--</b>. Observe
           that an error occurs.</li>
         <li>Modify the category parameter to add an additional column containing a null value:
-          '+UNION+SELECT+NULL,NULL--</li>
+          <b>'+UNION+SELECT+NULL,NULL--</b>
+        </li>
         <li>Continue adding null values until the error disappears and the response includes
           additional content containing the null values.</li>
       </ol>
@@ -32,9 +33,11 @@
         <li>Use Burp Suite to intercept and modify the request that sets the product category filter.</li>
         <li>Determine the number of columns that are being returned by the query. Verify that the
           query is returning three columns, using the following payload in the category parameter:
-          '+UNION+SELECT+NULL,NULL,NULL--</li>
+          <b>'+UNION+SELECT+NULL,NULL,NULL--</b>
+        </li>
         <li>Try replacing each null with the random value provided by the lab, for example:
-          '+UNION+SELECT+'abcdef',NULL,NULL--</li>
+          <b>'+UNION+SELECT+'abcdef',NULL,NULL--</b>
+        </li>
         <li>If an error occurs, move on to the next null and try that instead.</li>
       </ol>
     </div>
@@ -52,9 +55,11 @@
         <li>Determine the number of columns that are being returned by the query and which
           columns contain text data. Verify that the query is returning two columns, both of which
           contain text, using a payload like the following in the category parameter:
-          '+UNION+SELECT+'abc','def'--</li>
+          <b>'+UNION+SELECT+'abc','def'--</b>
+        </li>
         <li>Use the following payload to retrieve the contents of the users table:
-          '+UNION+SELECT+username,+password+FROM+users--</li>
+          <b>'+UNION+SELECT+username,+password+FROM+users--</b>
+        </li>
         <li>Verify that the application's response contains usernames and passwords.</li>
       </ol>
     </div>
@@ -72,9 +77,11 @@
         <li>Determine the number of columns that are being returned by the query and which
           columns contain text data. Verify that the query is returning two columns, only one of
           which contain text, using a payload like the following in the category parameter:
-          '+UNION+SELECT+NULL,'abc'--</li>
+          <b>'+UNION+SELECT+NULL,'abc'--</b>
+        </li>
         <li>Use the following payload to retrieve the contents of the users table:
-          '+UNION+SELECT+NULL,username||'~'||password+FROM+users--</li>
+          <b>'+UNION+SELECT+NULL,username||'~'||password+FROM+users--</b>
+        </li>
         <li>Verify that the application's response contains usernames and passwords.</li>
       </ol>
     </div>
@@ -92,9 +99,11 @@
         <li>Determine the number of columns that are being returned by the query and which
           columns contain text data. Verify that the query is returning two columns, both of which
           contain text, using a payload like the following in the category parameter:
-          '+UNION+SELECT+'abc','def'+FROM+dual--</li>
+          <b>'+UNION+SELECT+'abc','def'+FROM+dual--</b>
+        </li>
         <li>Use the following payload to display the database version:
-          '+UNION+SELECT+BANNER,+NULL+FROM+v$version--</li>
+          <b>'+UNION+SELECT+BANNER,+NULL+FROM+v$version--</b>
+        </li>
         <li>Verify that the application's response contains the version.</li>
       </ol>
     </div>

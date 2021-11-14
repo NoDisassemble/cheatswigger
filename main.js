@@ -31,5 +31,18 @@ function loadHtml(id, filename) {
     }
 }
 
+// Modal for change log
+const open = document.getElementById("open");
+const close = document.getElementById("close");
+const modalContainer = getElementById("modal-container");
+
+open.onclick = function () {
+    modalContainer.style.display = "flex";
+};
+
+close.onclick = function () {
+    modalContainer.style.display = "none";
+}
+
 
 

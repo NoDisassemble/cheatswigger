@@ -53,23 +53,12 @@ a {
   width: 110px;
 }
 
-.logo {
+.logo img {
+  display: block;
   position: relative;
   top: 10px;
   left: 10px;
-}
-
-.logo:hover {
-  transition: ease-in 200ms;
-  -webkit-transition: 0.7s;
-  -moz-transition: 0.7s;
-  -ms-transition: 0.7s;
-  -o-transition: 0.7s;
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
+  width: 100px;
 }
 
 .name {
@@ -101,7 +90,7 @@ a {
   display: none;
 }
 
-.link {
+.menu-link {
   display: flex;
   justify-content: center;
   padding: 20px 40px 40px 40px;
@@ -109,12 +98,12 @@ a {
   font-size: 3rem;
 }
 
-.link a {
+.menu-link a {
   text-decoration: none;
   color: rgb(151, 130, 107);
 }
 
-.link:hover {
+.menu-link:hover {
   background-color: #ff8177;
   background-image: linear-gradient(to right, #fa9042 0%, #fa9042 100%);
   background-size: 100%;
@@ -139,7 +128,7 @@ a {
   height: 100%;
 }
 
-.lab-title {
+.lab-header {
   position: fixed;
   top: 110px;
   background-color: #131313;
@@ -162,7 +151,7 @@ a {
   margin-bottom: 50px;
 }
 
-.lab-header {
+.lab-title {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
@@ -210,52 +199,69 @@ ol {
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
   }
 
-  .projects-container {
+  .menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    list-style-type: none;
+    overflow-y: auto;
+    box-shadow: inset 0px 20px 8px -10px #272727,
+      inset 0px -20px 8px -10px #272727;
+  }
+
+  .labs-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    align-items: center;
+    left: 0;
     width: 100%;
     height: 100%;
   }
 
-  .projects-title {
-    display: inline-block;
+  .lab-item {
+    position: relative;
+    top: 200px;
     width: 100%;
-    font-size: 2rem;
-    top: 0px;
+    margin-bottom: 50px;
   }
 
-  .projects-cards {
+  .lab-body,
+  ol {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-
+    padding: 1rem 1rem;
+    background-color: #f3f3f3;
+    min-height: 400px;
     width: 100%;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 0px 0px 5px 5px;
   }
 
   .navbar {
-    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
     position: fixed;
     bottom: 0;
-    height: 120px;
+    height: 100px;
     background-color: #1b1b1b;
     width: 100%;
     z-index: 2;
   }
 
-  .logo {
-    display: none;
+  .logo img {
+    position: relative;
+    left: 10px;
+    width: 70px;
+  }
+
+  .name {
+    position: relative;
+    color: white;
+    font-size: 2rem;
+    margin-left: 20px;
   }
 
   .menu {
@@ -276,6 +282,14 @@ ol {
     display: inline-block;
   }
 
+  .menu-link {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 3rem;
+  }
+
   ul {
     display: flex;
     overflow-x: scroll;
@@ -283,5 +297,18 @@ ol {
 
   li {
     float: left;
+  }
+
+  .lab-header {
+    width: 100%;
+    height: 70px;
+    top: 108px;
+    padding-top: 20px;
+    font-size: 2rem;
+    z-index: 2;
+  }
+
+  .lab-title {
+    min-height: 100px;
   }
 }

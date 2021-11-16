@@ -86,10 +86,6 @@ a {
   width: 100vw;
 }
 
-.modal-container.show {
-  display: flex;
-}
-
 .modal {
   background-color: white;
   width: 400px;

@@ -10,10 +10,6 @@
 
 body {
   background-color: #131313;
-  /* display: flex;
-  min-height: 100vh;
-  width: 100vw; */
-  /* overflow: hidden; */
 }
 
 a {
@@ -26,7 +22,6 @@ a {
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
 }
 
 .header {
@@ -56,16 +51,15 @@ a {
 .logo img {
   display: block;
   position: relative;
-  top: 10px;
   left: 10px;
-  width: 100px;
+  width: 80px;
 }
 
 .name {
   position: relative;
   color: white;
-  font-size: 3rem;
-  margin-left: 20px;
+  font-size: 2.8rem;
+  margin-left: 30px;
 }
 
 .version {
@@ -74,12 +68,13 @@ a {
   color: white;
 }
 
+/* ---------- Modal ---------- */
 .modal-container {
   position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
   height: 100vh;
@@ -91,12 +86,26 @@ a {
   width: 400px;
   max-width: 100%;
   height: 500px;
-  padding: 30px 50px;
+  padding: 10px 30px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   text-align: left;
+  pointer-events: all;
+  z-index: 10;
 }
 
+.btn-modal-close {
+  position: relative;
+  left: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* ---------- Menu ---------- */
 .menu {
   position: relative;
   top: 160px;
@@ -118,7 +127,7 @@ a {
   justify-content: center;
   padding: 20px 40px 40px 40px;
   box-sizing: border-box;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .menu-link a {
@@ -141,21 +150,20 @@ a {
   z-index: 99999;
 }
 
+/* ---------- Labs ---------- */
 .labs-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  left: 30px;
-  width: 85%;
+  width: 75%;
   height: 100%;
+  left: 5%;
 }
 
 .lab-header {
-  position: fixed;
+  position: relative;
   top: 110px;
-  background-color: #131313;
-  width: 90%;
+  width: 100%;
   height: 130px;
   display: flex;
   flex-direction: row;
@@ -164,12 +172,11 @@ a {
   color: white;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  z-index: 2;
 }
 
 .lab-item {
   position: relative;
-  top: 300px;
+  top: 150px;
   width: 100%;
   margin-bottom: 50px;
 }
@@ -206,6 +213,21 @@ ol {
   color: white;
 }
 
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 88%;
+  width: 32%;
+  padding: 20px;
+  right: 0;
+  top: 120px;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  z-index: 4;
+  overflow: auto;
+}
+
 /* -- Mobile -- */
 
 /* Portrait and Landscape */
@@ -220,16 +242,6 @@ ol {
     justify-content: center;
   }
 
-  .menu {
-    display: none;
-    position: absolute;
-    width: 100%;
-    list-style-type: none;
-    overflow-y: auto;
-    box-shadow: inset 0px 20px 8px -10px #272727,
-      inset 0px -20px 8px -10px #272727;
-  }
-
   .labs-container {
     position: relative;
     display: flex;
@@ -241,7 +253,7 @@ ol {
 
   .lab-item {
     position: relative;
-    top: 200px;
+    top: 100px;
     width: 100%;
     margin-bottom: 50px;
   }
@@ -324,10 +336,13 @@ ol {
     top: 108px;
     padding-top: 20px;
     font-size: 2rem;
-    z-index: 2;
   }
 
   .lab-title {
     min-height: 100px;
+  }
+
+  .sidebar {
+    display: none;
   }
 }

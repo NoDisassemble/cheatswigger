@@ -37,17 +37,6 @@ a {
   z-index: 2;
 }
 
-.navbar {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  left: 0;
-  height: 100%;
-  background-color: #1b1b1b;
-  width: 110px;
-}
-
 .logo img {
   display: block;
   position: relative;
@@ -105,6 +94,18 @@ a {
   font-weight: bold;
 }
 
+/* ---------- Nav ---------- */
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  height: 100%;
+  background-color: #1b1b1b;
+  width: 110px;
+}
+
 /* ---------- Menu ---------- */
 .menu {
   position: relative;
@@ -155,9 +156,9 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 58%;
   height: 100%;
-  left: 5%;
+  left: 8%;
 }
 
 .lab-header {
@@ -171,7 +172,6 @@ a {
   justify-content: center;
   color: white;
   font-size: 2.5rem;
-  margin-bottom: 50px;
 }
 
 .lab-item {
